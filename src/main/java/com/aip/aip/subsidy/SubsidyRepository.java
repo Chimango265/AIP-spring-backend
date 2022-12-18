@@ -13,9 +13,11 @@ import java.util.Optional;
 public interface SubsidyRepository extends JpaRepository<CropSubsidy, Integer> {
     List<CropSubsidy> findAllByFarmer(String nationalId);
 
+    //check if beneficiary has collected subsidy
     @Query(value = "SELECT collected FROM crop_subsidy WHERE farmer = ?1", nativeQuery = true)
     boolean isSubsidyCollected(String nationalId);
 
+    //Update collected field to true after collection
     @Transactional
     @Modifying
     @Query(value = "UPDATE crop_subsidy SET collected = TRUE WHERE farmer = ?1 ", nativeQuery = true)
