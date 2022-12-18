@@ -18,15 +18,18 @@ public class CropSubsidy {
     private double urea;
     private String interCrop;
 
+    private boolean collected;
+
     public CropSubsidy() {
     }
 
-    public CropSubsidy(String farmer, double npk, double urea, String interCrop) {
+    public CropSubsidy(String farmer, double npk, double urea, String interCrop, boolean collected) {
         this.subsidyId = subsidyId;
         this.farmer = farmer;
         this.npk = npk;
         this.urea = urea;
         this.interCrop = interCrop;
+        this.collected = collected;
     }
 
     public double getNpk() {
@@ -59,6 +62,14 @@ public class CropSubsidy {
 
     public void setFarmer(String farmer) {
         this.farmer = farmer;
+    }
+
+    public boolean isCollected() {
+        return collected;
+    }
+
+    public void setCollected(boolean collected) {
+        this.collected = collected;
     }
 
     @Override

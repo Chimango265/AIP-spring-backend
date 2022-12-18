@@ -34,7 +34,7 @@ public class AllocateSubsidy {
         subsidy.put("urea", urea);
         subsidy.put("intercrop", interCrop);
 
-        CropSubsidy farmSubsidy = new CropSubsidy(farmer, npk, urea, interCrop);
+        CropSubsidy farmSubsidy = new CropSubsidy(farmer, npk, urea, interCrop, false);
         subsidyService.addSubsidy(farmSubsidy);
 
         return subsidy;

@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class SubsidyService {
@@ -15,6 +16,10 @@ public class SubsidyService {
     }
 
     public List<CropSubsidy> getSubsidy(String nationalId) {
+        boolean subsidyCollected = subsidyRepository.isSubsidyCollected(nationalId);
+        if (subsidyCollected == true) {
+            throw new IllegalStateException("beneficiary has collected");
+        }
 
         return subsidyRepository.findAllByFarmer(nationalId);
     }
@@ -25,4 +30,7 @@ public class SubsidyService {
         return cropSubsidy;
     }
 
+    public void collectSubsidy(String nationalId) {
+        subsidyRepository.collectSubsidy(nationalId);
+    }
 }
