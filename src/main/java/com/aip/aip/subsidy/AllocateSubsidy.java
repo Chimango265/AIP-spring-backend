@@ -15,7 +15,7 @@ public class AllocateSubsidy {
         this.subsidyService = subsidyService;
     }
 
-    public JSONObject allocateSubsidy(String farmer, String mainCrop, int farmSize, String soilHealth) {
+    public JSONObject allocateSubsidy(String farmer, String mainCrop, double farmSize, String soilHealth) {
         String interCrop;
 
         int npk = 47 + (int) (Math.random() * 170);

@@ -22,6 +22,13 @@ public class CropSubsidyController {
         return subsidyService.getSubsidy(nationalId);
     }
 
+    @GetMapping(path = "get_collected")
+    public List<Boolean> getSubsidyIfCollected() {
+        return subsidyService.getSubsidyIfCollected();
+    }
+
+
+
     @PostMapping
     public void collectSubsidy(String nationalId) {
         subsidyService.collectSubsidy(nationalId);

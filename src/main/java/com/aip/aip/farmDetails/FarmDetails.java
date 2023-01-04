@@ -15,7 +15,7 @@ public class FarmDetails {
 
     @OneToOne(mappedBy = "farm")
     private Farmer farmer;
-    private int farmSize;
+    private double farmSize;
     private String soilHealth;
     private String mainCrop;
     private String location;
@@ -23,7 +23,7 @@ public class FarmDetails {
     public FarmDetails() {
     }
 
-    public FarmDetails(int farmId, int farmSize, String soilHealth, String mainCrop, String location) {
+    public FarmDetails(int farmId, double farmSize, String soilHealth, String mainCrop, String location) {
         this.farmSize = farmSize;
         this.farmId = farmId;
         this.soilHealth = soilHealth;
@@ -31,11 +31,11 @@ public class FarmDetails {
         this.location = location;
     }
 
-    public int getFarmSize() {
+    public double getFarmSize() {
         return farmSize;
     }
 
-    public void setFarmSize(int farmSize) {
+    public void setFarmSize(double farmSize) {
         this.farmSize = farmSize;
     }
 

@@ -33,4 +33,8 @@ public class SubsidyService {
     public void collectSubsidy(String nationalId) {
         subsidyRepository.collectSubsidy(nationalId);
     }
+
+    public List<Boolean> getSubsidyIfCollected() {
+        return subsidyRepository.findAllByCollected();
+    }
 }

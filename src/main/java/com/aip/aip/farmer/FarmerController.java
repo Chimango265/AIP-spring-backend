@@ -38,7 +38,7 @@ public class FarmerController {
         //for crop subsidy object
 
         String mainCrop = (farmer.getFarm()).getMainCrop();
-        int farmSize = (farmer.getFarm()).getFarmSize();
+        double farmSize = (farmer.getFarm()).getFarmSize();
         String soilHealth = (farmer.getFarm()).getSoilHealth();
         String nationalId = farmer.getNational_id();
 

@@ -22,4 +22,7 @@ public interface SubsidyRepository extends JpaRepository<CropSubsidy, Integer> {
     @Modifying
     @Query(value = "UPDATE crop_subsidy SET collected = TRUE WHERE farmer = ?1 ", nativeQuery = true)
     void collectSubsidy(String nationalId);
+
+    @Query(value = "SELECT collected FROM crop_subsidy ", nativeQuery = true)
+    List<Boolean> findAllByCollected();
 }
